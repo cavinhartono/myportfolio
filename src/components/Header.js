@@ -1,4 +1,4 @@
-export default function Header() {
+function Header() {
   return (
     <div class="fixed top-0 flex flex-col justify-center py-20 w-[600px] min-h-screen z-10">
       <div class="relative">
@@ -80,3 +80,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default Header;

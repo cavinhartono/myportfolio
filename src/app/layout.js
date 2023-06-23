@@ -9,6 +9,29 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  let sections = document.querySelectorAll("section"),
+    links = document.querySelectorAll(".capitalize a"),
+    width = document.querySelectorAll(".capitalize a div");
+
+  window.onscroll = () => {
+    var current = "";
+    sections.forEach((section) => {
+      pageYOffset >= section.offsetTop ??
+        (current = section.getAttribute("id"));
+    });
+
+    links.forEach((link) => {
+      width.forEach((element) => {
+        link.classList.remove("flex items-center gap-4 text-black-400");
+        element.classList.remove("w-[25px] h-[4px] bg-black-400 rounded-full");
+        if (link.classList.contains(current)) {
+          link.classList.add("flex items-center gap-4 text-blue-600");
+          element.classList.add("w-[50px] h-[4px] bg-blue-600 rounded-full");
+        }
+      });
+    });
+  };
+
   return (
     <html lang="en">
       <body className={` ${inter.className} bg-white-500`}>{children}</body>

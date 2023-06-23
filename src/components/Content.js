@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Content() {
   return (
     <div className="absolute right-0 w-[calc(100%-600px)] py-20 px-[140px] flex flex-col justify-end">
@@ -24,7 +26,49 @@ export default function Content() {
           </ul>
         </ul>
       </main>
-      <main id="projects"></main>
+      <main id="projects" className="w-full">
+        <ul>
+          <li className="w-full">
+            <Image
+              src="@/components/assets/Velsnesia.png"
+              className="w-full h-[100px]"
+              alt="Project 1"
+            />
+            <ul>
+              <li className="w-full">
+                <h2 className="text-2xl text-blue-500">Velsnesia</h2>
+                <p className="text-xl text-black-600">Vue and SASS</p>
+              </li>
+            </ul>
+          </li>
+          <li className="w-full">
+            <Image
+              src="@/components/assets/Shopcube.png"
+              className="w-full h-[100px]"
+              alt="Project 1"
+            />
+            <ul>
+              <li className="w-full">
+                <h2 className="text-2xl text-blue-500">Shopcube</h2>
+                <p className="text-xl text-black-600">Laravel</p>
+              </li>
+            </ul>
+          </li>
+          <li className="w-full">
+            <Image
+              src="@/components/assets/furnitur.png"
+              className="w-full h-[100px]"
+              alt="Project 1"
+            />
+            <ul>
+              <li className="w-full">
+                <h2 className="text-2xl text-blue-500">Furnitur</h2>
+                <p className="text-xl text-black-600">Laravel</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
