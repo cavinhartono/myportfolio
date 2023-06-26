@@ -1,4 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import Velsnesia from "@/components/assets/Velsnesia.png";
+import Shopcube from "@/components/assets/Shopcube.png";
+import Furnitur from "@/components/assets/furnitur.png";
 
 export default function Content() {
   return (
@@ -26,12 +30,14 @@ export default function Content() {
           </ul>
         </ul>
       </main>
-      <main id="projects" className="w-full">
+      <main id="projects" className="w-full my-12">
         <ul>
-          <li className="w-full">
+          <li className="w-full flex items-center gap-8">
             <Image
-              src="@/components/assets/Velsnesia.png"
-              className="w-full h-[100px]"
+              src={Velsnesia}
+              width={500}
+              height={500}
+              className="w-40 h-24"
               alt="Project 1"
             />
             <ul>
@@ -41,10 +47,12 @@ export default function Content() {
               </li>
             </ul>
           </li>
-          <li className="w-full">
+          <li className="w-full flex items-center gap-8 my-6">
             <Image
-              src="@/components/assets/Shopcube.png"
-              className="w-full h-[100px]"
+              src={Shopcube}
+              width={500}
+              height={500}
+              className="w-40 h-24"
               alt="Project 1"
             />
             <ul>
@@ -54,10 +62,12 @@ export default function Content() {
               </li>
             </ul>
           </li>
-          <li className="w-full">
+          <li className="w-full flex items-center gap-8">
             <Image
-              src="@/components/assets/furnitur.png"
-              className="w-full h-[100px]"
+              src={Furnitur}
+              width={500}
+              height={500}
+              className="w-40 h-24"
               alt="Project 1"
             />
             <ul>
@@ -67,6 +77,12 @@ export default function Content() {
               </li>
             </ul>
           </li>
+          <Link
+            href="https://www.github.com/cavinhartono"
+            className="w-full text-center"
+          >
+            See More
+          </Link>
         </ul>
       </main>
     </div>
