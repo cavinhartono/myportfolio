@@ -7,7 +7,7 @@ import Furnitur from "@/components/assets/furnitur.png";
 export default function Content() {
   return (
     <div className="absolute right-0 w-[calc(100%-600px)] py-20 px-[140px] flex flex-col justify-end">
-      <main id="home" className="w-full">
+      <main id="home" className="w-full max-h-screen">
         <p className="text-lg text-black-400 text-justify">
           Hi, I&#39;ve created products for companies and businesses website
           with focus on fast, elegant and accessible user experiences. Before
@@ -30,7 +30,7 @@ export default function Content() {
           </ul>
         </ul>
       </main>
-      <main id="projects" className="w-full my-12">
+      <main id="projects" className="w-full my-6">
         <ul>
           <li className="w-full flex items-center gap-8">
             <Image
@@ -42,8 +42,8 @@ export default function Content() {
             />
             <ul>
               <li className="w-full">
-                <h2 className="text-2xl text-blue-500">Velsnesia</h2>
-                <p className="text-xl text-black-600">Vue and SASS</p>
+                <h2 className="text-lg text-blue-500">Velsnesia</h2>
+                <p className="text-md text-black-600">Vue and SASS</p>
               </li>
             </ul>
           </li>
@@ -57,8 +57,8 @@ export default function Content() {
             />
             <ul>
               <li className="w-full">
-                <h2 className="text-2xl text-blue-500">Shopcube</h2>
-                <p className="text-xl text-black-600">Laravel</p>
+                <h2 className="text-lg text-blue-500">Shopcube</h2>
+                <p className="text-md text-black-600">Laravel</p>
               </li>
             </ul>
           </li>
@@ -72,17 +72,14 @@ export default function Content() {
             />
             <ul>
               <li className="w-full">
-                <h2 className="text-2xl text-blue-500">Furnitur</h2>
-                <p className="text-xl text-black-600">Laravel</p>
+                <h2 className="text-lg text-blue-500">Furnitur</h2>
+                <p className="text-md text-black-600">Laravel</p>
               </li>
             </ul>
           </li>
-          <Link
-            href="https://www.github.com/cavinhartono"
-            className="w-full text-center"
-          >
-            See More
-          </Link>
+          <li className="w-full text-center my-6 px-2 py-4 border rounded-md hover:border-black-200">
+            <Link href="https://www.github.com/cavinhartono">See More</Link>
+          </li>
         </ul>
       </main>
     </div>
