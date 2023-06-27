@@ -7,7 +7,7 @@ import Furnitur from "@/components/assets/furnitur.png";
 export default function Content() {
   return (
     <div className="absolute right-0 w-[calc(100%-600px)] py-20 px-[140px] flex flex-col justify-end">
-      <main id="home" className="w-full max-h-screen">
+      <main id="about" className="w-full max-h-screen">
         <p className="text-lg text-black-400 text-justify">
           Hi, I&#39;ve created products for companies and businesses website
           with focus on fast, elegant and accessible user experiences. Before
@@ -30,7 +30,7 @@ export default function Content() {
           </ul>
         </ul>
       </main>
-      <main id="projects" className="w-full my-6">
+      <main id="projects" className="w-full my-6 max-h-screen">
         <ul>
           <li className="w-full flex items-center gap-8">
             <Image
