@@ -1,30 +1,41 @@
-function Header() {
-  if (typeof document !== "undefined") {
-    let sections = document.querySelectorAll("main"),
-      links = document.querySelectorAll(".capitalize > a"),
-      width = document.querySelectorAll(".capitalize > a > div");
+"use client";
+import { useState, useEffect } from "react";
 
+function Header() {
+  let sections = document.querySelectorAll("main"),
+    links = document.querySelectorAll(".capitalize a"),
+    width = document.querySelectorAll(".capitalize a div");
+
+  const [clientWindowHeight, setClientWindowHeight] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       var current = "";
       sections.forEach((section) => {
-        window.scrollY >= section.offsetTop ??
+        clientWindowHeight >= section.offsetTop ??
           (current = section.getAttribute("id"));
       });
-
       links.forEach((link) => {
         width.forEach((element) => {
-          link.classList.remove("flex items-center gap-4 text-black-400");
-          element.classList.remove(
-            "w-[25px] h-[4px] bg-black-400 rounded-full"
-          );
+          link.classList.remove("text-black-400");
+          element.classList.remove("w-[25px]", "bg-black-400");
           if (link.classList.contains(current)) {
-            link.classList.add("flex items-center gap-4 text-blue-600");
-            element.classList.add("w-[50px] h-[4px] bg-blue-600 rounded-full");
+            link.classList.add("text-blue-600");
+            element.classList.add("w-[50px]", "bg-blue-600");
           }
         });
       });
     });
-  }
+  }, [clientWindowHeight]);
+
+  const handleScroll = () => {
+    setClientWindowHeight(window.scrollY);
+  };
 
   return (
     <div className="fixed top-0 flex flex-col justify-center py-20 w-[600px] min-h-screen z-10">
