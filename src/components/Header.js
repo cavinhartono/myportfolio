@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 function Header() {
   let sections = document.querySelectorAll("main"),
+    lists = document.querySelectorAll(".capitalize"),
     links = document.querySelectorAll(".capitalize a"),
     width = document.querySelectorAll(".capitalize a div");
 
@@ -20,14 +21,16 @@ function Header() {
         clientWindowHeight >= section.offsetTop ??
           (current = section.getAttribute("id"));
       });
-      links.forEach((link) => {
-        width.forEach((element) => {
-          link.classList.remove("text-black-400");
-          element.classList.remove("w-[25px]", "bg-black-400");
-          if (link.classList.contains(current)) {
-            link.classList.add("text-blue-600");
-            element.classList.add("w-[50px]", "bg-blue-600");
-          }
+      lists.forEach((list) => {
+        links.forEach((link) => {
+          width.forEach((element) => {
+            link.classList.remove("text-black-400");
+            element.classList.remove("w-[25px]", "bg-black-400");
+            if (list.classList.contains(current)) {
+              link.classList.add("text-blue-600");
+              element.classList.add("w-[50px]", "bg-blue-600");
+            }
+          });
         });
       });
     });
@@ -55,13 +58,13 @@ function Header() {
         </p>
       </div>
       <ul className="relative my-[64px]">
-        <li className="capitalize">
+        <li className="about capitalize">
           <a href="#about" className="flex items-center gap-4 text-blue-600">
             <div className="w-[50px] h-[4px] bg-blue-600 rounded-full"></div>
             about
           </a>
         </li>
-        <li className="capitalize">
+        <li className="projects capitalize">
           <a
             href="#projects"
             className="flex items-center gap-4 text-black-400"
