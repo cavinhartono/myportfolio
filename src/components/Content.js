@@ -37,7 +37,7 @@ export default function Content() {
               src={Velsnesia}
               width={500}
               height={500}
-              className="w-40 h-24"
+              className="w-40 h-24 rounded-lg"
               alt="Project 1"
             />
             <ul>
@@ -52,7 +52,7 @@ export default function Content() {
               src={Shopcube}
               width={500}
               height={500}
-              className="w-40 h-24"
+              className="w-40 h-24 rounded-lg"
               alt="Project 1"
             />
             <ul>
@@ -67,7 +67,7 @@ export default function Content() {
               src={Furnitur}
               width={500}
               height={500}
-              className="w-40 h-24"
+              className="w-40 h-24 rounded-lg"
               alt="Project 1"
             />
             <ul>

@@ -7,12 +7,10 @@ export default function Home() {
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
       const cursor = document.querySelector(".customcursor");
-      let width = cursor.offsetWidth;
-      let height = cursor.offsetHeight;
 
       setTimeout(() => {
-        cursor.style.left = `${e.pageX - width}px`;
-        cursor.style.top = `${e.pageY - height}px`;
+        cursor.style.left = `${e.pageX - cursor.offsetWidth}px`;
+        cursor.style.top = `${e.pageY - cursor.offsetHeight}px`;
       }, 20);
     });
   });
@@ -21,7 +19,7 @@ export default function Home() {
     <section className="container px-[140px] py-20">
       <Header />
       <Content />
-      <div className="-z-10 customcursor absolute block w-24 h-24 bg-blue-400 blur-3xl"></div>
+      <div className="-z-10 customcursor absolute top-0 left-0 block w-32 h-32 bg-blue-400 blur-3xl transition"></div>
     </section>
   );
 }
