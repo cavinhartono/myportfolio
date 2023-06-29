@@ -1,44 +1,34 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 function Header() {
-  let sections = document.querySelectorAll("main"),
-    lists = document.querySelectorAll(".capitalize"),
+  let sections = document.querySelectorAll("section"),
     links = document.querySelectorAll(".capitalize a"),
     width = document.querySelectorAll(".capitalize a div");
 
-  const [clientWindowHeight, setClientWindowHeight] = useState("");
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      var current = "";
       sections.forEach((section) => {
-        clientWindowHeight >= section.offsetTop ??
-          (current = section.getAttribute("id"));
-      });
-      lists.forEach((list) => {
-        links.forEach((link) => {
-          width.forEach((element) => {
-            link.classList.remove("text-black-400");
-            element.classList.remove("w-[25px]", "bg-black-400");
-            if (list.classList.contains(current)) {
-              link.classList.add("text-blue-600");
-              element.classList.add("w-[50px]", "bg-blue-600");
-            }
+        let offset = section.offsetTop,
+          height = section.offsetHeight,
+          top = window.scrollY,
+          id = section.getAttribute("id");
+
+        if (top >= offset && top < offset + height) {
+          links.forEach((link) => {
+            width.forEach((element) => {
+              link.classList.remove("text-blue-600");
+              element.classList.remove("w-[50px]", "bg-blue-600");
+              document
+                .querySelector(`.capitalize a[href*=${id}]`)
+                .classList.add("text-black-400");
+              element.classList.add("w-[25px]", "bg-black-400");
+            });
           });
-        });
+        }
       });
     });
-  }, [clientWindowHeight]);
-
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
+  });
 
   return (
     <div className="fixed top-0 flex flex-col justify-center py-20 w-[600px] min-h-screen z-10">
@@ -58,13 +48,13 @@ function Header() {
         </p>
       </div>
       <ul className="relative my-[64px]">
-        <li className="about capitalize">
+        <li className="capitalize">
           <a href="#about" className="flex items-center gap-4 text-blue-600">
             <div className="w-[50px] h-[4px] bg-blue-600 rounded-full"></div>
             about
           </a>
         </li>
-        <li className="projects capitalize">
+        <li className="capitalize">
           <a
             href="#projects"
             className="flex items-center gap-4 text-black-400"
