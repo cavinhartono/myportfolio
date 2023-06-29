@@ -3,31 +3,26 @@ import { useEffect } from "react";
 
 function Header() {
   let sections = document.querySelectorAll("section"),
-    links = document.querySelectorAll(".capitalize a"),
-    width = document.querySelectorAll(".capitalize a div");
+    links = document.querySelectorAll(".capitalize a");
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.onscroll = () => {
       sections.forEach((section) => {
-        let offset = section.offsetTop,
+        let offset = section.offsetTop - 80,
           height = section.offsetHeight,
           top = window.scrollY,
           id = section.getAttribute("id");
 
         if (top >= offset && top < offset + height) {
           links.forEach((link) => {
-            width.forEach((element) => {
-              link.classList.remove("text-blue-600");
-              element.classList.remove("w-[50px]", "bg-blue-600");
-              document
-                .querySelector(`.capitalize a[href*=${id}]`)
-                .classList.add("text-black-400");
-              element.classList.add("w-[25px]", "bg-black-400");
-            });
+            link.classList.remove("active");
+            document
+              .querySelector(`.capitalize a[href*=${id}]`)
+              .classList.add("active");
           });
         }
       });
-    });
+    };
   });
 
   return (
@@ -49,17 +44,20 @@ function Header() {
       </div>
       <ul className="relative my-[64px]">
         <li className="capitalize">
-          <a href="#about" className="flex items-center gap-4 text-blue-600">
-            <div className="w-[50px] h-[4px] bg-blue-600 rounded-full"></div>
+          <a
+            href="#about"
+            className="flex items-center gap-4 text-black-400 transition-all delay-500 active"
+          >
+            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all"></div>
             about
           </a>
         </li>
         <li className="capitalize">
           <a
             href="#projects"
-            className="flex items-center gap-4 text-black-400"
+            className="flex items-center gap-4 text-black-400 transition-all delay-500"
           >
-            <div className="w-[25px] h-[4px] bg-black-400 rounded-full"></div>
+            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all"></div>
             projects
           </a>
         </li>
