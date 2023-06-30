@@ -34,11 +34,10 @@
 }
 
 .capitalize a.active {
-  color: #0b60ea;
+  color: #222;
 }
 
 .capitalize a.active div {
   width: 50px;
-  background: #0b60ea;
-  transition-delay: 500ms;
+  background: #222;
 }

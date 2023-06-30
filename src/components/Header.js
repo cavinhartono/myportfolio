@@ -46,18 +46,18 @@ function Header() {
         <li className="capitalize">
           <a
             href="#about"
-            className="flex items-center gap-4 text-black-400 transition-all delay-500 active"
+            className="flex items-center gap-4 text-black-400 transition-colors delay-500 active"
           >
-            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all"></div>
+            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all delay-500"></div>
             about
           </a>
         </li>
         <li className="capitalize">
           <a
             href="#projects"
-            className="flex items-center gap-4 text-black-400 transition-all delay-500"
+            className="flex items-center gap-4 text-black-400 transition-colors delay-500"
           >
-            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all"></div>
+            <div className="w-[25px] h-[4px] bg-black-400 rounded-full transition-all delay-500"></div>
             projects
           </a>
         </li>

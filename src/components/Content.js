@@ -10,10 +10,13 @@ export default function Content() {
       <section id="about" className="w-full max-h-screen">
         <p className="text-lg text-black-400 text-justify">
           Hi, I&#39;ve created products for companies and businesses website
-          with focus on fast, elegant and accessible user experiences. Before
-          now, I was{" "}
-          <span className="text-blue-400"> Fullstack Developer Intern </span> at
-          <span className="text-blue-400"> Webhade Creative</span>, where I
+          with <span className="text-black-600">focus on fast, elegant </span>
+          and{" "}
+          <span className="text-black-600"> accessible user experiences</span>.
+          Before now, I was{" "}
+          <span className="text-black-600"> Fullstack Developer Intern </span>{" "}
+          at
+          <span className="text-black-600"> Webhade Creative</span>, where I
           created on Point of Sale website
         </p>
         <p className="text-lg text-black-400 my-4 text-justify">

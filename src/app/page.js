@@ -19,7 +19,7 @@ export default function Home() {
     <main className="container px-[140px] py-20">
       <Header />
       <Content />
-      <div className="-z-10 customcursor absolute top-0 left-0 block w-32 h-32 bg-blue-400 blur-3xl transition"></div>
+      <div className="-z-10 customcursor absolute top-0 left-0 block w-[500px] h-[500px] bg-blue-200 blur-[240px] transition"></div>
     </main>
   );
 }
