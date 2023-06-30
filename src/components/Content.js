@@ -3,6 +3,7 @@ import Link from "next/link";
 import Velsnesia from "@/components/assets/Velsnesia.png";
 import Shopcube from "@/components/assets/Shopcube.png";
 import Furnitur from "@/components/assets/furnitur.png";
+import Footer from "./Footer";
 
 export default function Content() {
   return (
